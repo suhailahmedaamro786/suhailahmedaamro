@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,19 +17,31 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
 
-    // Build mailto link with form data
-    const { name, email, subject, message } = formData;
-    const mailtoSubject = encodeURIComponent(subject || "Portfolio Contact");
-    const mailtoBody = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
+    try {
+      const { error } = await supabase()
+        .from("messages")
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        });
 
-    // Open email client
-    window.location.href = `mailto:suhailahmedamro786@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+      if (error) {
+        console.error("Error sending message:", error);
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 3000);
+        return;
+      }
 
-    setStatus("success");
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setStatus("idle"), 3000);
+      setStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setStatus("idle"), 3000);
+    } catch (err) {
+      console.error("Error:", err);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 3000);
+    }
   };
 
   const handleChange = (
