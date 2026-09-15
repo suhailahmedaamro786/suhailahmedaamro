@@ -31,7 +31,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="btn-secondary inline-flex items-center gap-2 hover:scale-110 transition-transform duration-300"
               >
-                <Download size={20} className="animate-bounce" />
+                <Download size={20} />
                 Download CV
               </a>
             </div>
@@ -60,8 +60,8 @@ export default function Home() {
               <div className="text-gray-600 dark:text-gray-400">Technologies</div>
             </div>
             <div className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-purple-400">
-              <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent mb-2">25+</div>
-              <div className="text-gray-600 dark:text-gray-400">Projects</div>
+              <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent mb-2">13+</div>
+              <div className="text-gray-600 dark:text-gray-400">Projects Deployed</div>
             </div>
             <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-green-400">
               <div className="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent mb-2">A</div>
@@ -69,7 +69,7 @@ export default function Home() {
             </div>
             <div className="p-6 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-orange-400">
               <div className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-500 bg-clip-text text-transparent mb-2">3</div>
-              <div className="text-gray-600 dark:text-gray-400">Languages</div>
+              <div className="text-gray-600 dark:text-gray-400">Languages Spoken</div>
             </div>
           </div>
         </div>

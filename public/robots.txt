@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://my-portfilo-41201.vercel.app/sitemap.xml
+Sitemap: https://suhailahmedaamro786.github.io/suhailahmedaamro/sitemap.xml

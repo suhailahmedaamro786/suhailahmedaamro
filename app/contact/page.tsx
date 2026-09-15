@@ -16,12 +16,19 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
 
-    // Simulate form submission
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setStatus("idle"), 3000);
-    }, 1000);
+    // Build mailto link with form data
+    const { name, email, subject, message } = formData;
+    const mailtoSubject = encodeURIComponent(subject || "Portfolio Contact");
+    const mailtoBody = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+
+    // Open email client
+    window.location.href = `mailto:suhailahmedamro786@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+    setStatus("success");
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setTimeout(() => setStatus("idle"), 3000);
   };
 
   const handleChange = (

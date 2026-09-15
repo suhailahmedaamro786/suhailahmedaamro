@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Linkedin } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
@@ -28,7 +28,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -42,7 +42,15 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <ThemeToggle />
+            <div className="flex items-center space-x-3 border-l border-gray-200 dark:border-gray-700 pl-6">
+              <a href="https://github.com/SuhailAhmedAamro" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="GitHub">
+                <Github size={20} />
+              </a>
+              <a href="https://www.linkedin.com/in/suhail-ahmed-aamro-623863279/" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors" aria-label="LinkedIn">
+                <Linkedin size={20} />
+              </a>
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
