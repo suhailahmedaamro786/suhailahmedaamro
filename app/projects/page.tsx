@@ -1,20 +1,29 @@
-"use client";
-
+import type { Metadata } from "next";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import GitHubProjects from "@/components/GitHubProjects";
 
+export const metadata: Metadata = {
+  title: "Projects | Suhail Ahmed",
+  description: "Selected AI, web development, Python, documentation, e-commerce and automation projects by Suhail Ahmed.",
+  openGraph: {
+    title: "Projects | Suhail Ahmed",
+    description: "Explore selected AI, web development, Python and software projects by Suhail Ahmed.",
+    type: "website",
+  },
+};
+
 const projects = [
-  { title: "University AI Assistant", slug: "university-ai-assistant", description: "Intelligent university assistant built with Next.js and AI integration for student queries and academic guidance.", tech: ["Next.js", "TypeScript", "AI/ML", "Tailwind CSS"], category: "AI Web Application", liveUrl: "https://aamro-university-agent.vercel.app/", image: "/NEXT.JS/University Assistant.png" },
-  { title: "Personal Portfolio Website", slug: "personal-portfolio-website", description: "Professional portfolio with project showcase, contact workflow, responsive design, dark mode and Gemini AI assistant.", tech: ["Next.js", "TypeScript", "Tailwind CSS", "Gemini AI"], category: "Professional Portfolio", liveUrl: "https://my-portfilo-41201.vercel.app/", image: "/NEXT.JS/portfilo.png" },
-  { title: "Physical AI & Humanoid Robotics Platform", slug: "physical-ai-humanoid-robotics-platform", description: "Modern learning and documentation platform showcasing physical AI and humanoid robotics technology.", tech: ["Next.js", "TypeScript", "3D Graphics", "Tailwind CSS"], category: "AI / Documentation", liveUrl: "https://book-skp-claude.vercel.app/", image: "/NEXT.JS/physical AI & Humanoid Robotics.png" },
-  { title: "Islamic Worship Assistant (Ramadan App)", description: "Comprehensive worship assistant featuring prayer times, Quran features and Ramadan tools.", tech: ["Next.js", "TypeScript", "Islamic APIs", "Tailwind CSS"], category: "Web Application", liveUrl: "https://v0-ramzan-app-features.vercel.app/", image: "/NEXT.JS/Islamic Worship Assistant.png" },
-  { title: "E-Commerce Book Store", description: "Modern e-commerce platform with catalog, cart, authentication, checkout and order management.", tech: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS"], category: "E-Commerce", liveUrl: "https://final-hackthoon-2-ska-git-main-suhailahmedaamros-projects.vercel.app/", image: "/NEXT.JS/E-Commerce website.png" },
-  { title: "NJV School Management System", description: "School management system covering student registration, attendance, grades and communication workflows.", tech: ["Next.js", "TypeScript", "Database", "Tailwind CSS"], category: "Management System", liveUrl: "https://njv-school.vercel.app/", image: "/NEXT.JS/NJV Form.png" },
-  { title: "GDP Dashboard", description: "Interactive global economic data visualization dashboard with country comparisons and historical trends.", tech: ["Python", "Streamlit", "Pandas", "Plotly"], category: "Python Application", liveUrl: "https://gdp-dashboard-uskmsgizln.streamlit.app/", image: "/PY/GDP.png" },
-  { title: "Multi-Project Python App", description: "Collection of 15 interactive Python projects including calculators, productivity tools and utilities.", tech: ["Python", "Streamlit", "Plotly", "Pandas"], category: "Python Application", liveUrl: "https://suhailahmedaamro-python-projects-projects-60ybw3.streamlit.app/", image: "/PY/Multiple Projects.png" },
-  { title: "Personal Library Manager", description: "Library management system for cataloging books, tracking reading status and visualizing collection statistics.", tech: ["Python", "Streamlit", "Pandas", "Plotly"], category: "Python Application", liveUrl: "https://suhailahmedaamro-library-manager-py-library-manager-txxaiw.streamlit.app/", image: "/PY/Personal Library Manger.png" },
+  { title: "University AI Assistant", slug: "university-ai-assistant", description: "AI-powered student assistant with conversational responses, university information and academic guidance workflows.", tech: ["Next.js", "TypeScript", "AI/ML", "Tailwind CSS"], category: "AI Web Application", liveUrl: "https://aamro-university-agent.vercel.app/" , image: "/NEXT.JS/University Assistant.png" },
+  { title: "Personal Portfolio Website", slug: "personal-portfolio-website", description: "Responsive Next.js portfolio with project showcase, Supabase contact workflow, dark mode, CV access and a Gemini AI assistant.", tech: ["Next.js", "TypeScript", "Tailwind CSS", "Gemini AI"], category: "Professional Portfolio", liveUrl: "https://my-portfilo-41201.vercel.app/", githubUrl: "https://github.com/SuhailAhmedAamro/SuhailAhmedAamro", image: "/NEXT.JS/portfilo.png" },
+  { title: "Physical AI & Humanoid Robotics Platform", slug: "physical-ai-humanoid-robotics-platform", description: "Interactive learning and documentation platform for physical AI and humanoid robotics, with structured technical content and responsive presentation.", tech: ["Next.js", "TypeScript", "3D Graphics", "Tailwind CSS"], category: "AI / Documentation", liveUrl: "https://book-skp-claude.vercel.app/", githubUrl: "https://github.com/SuhailAhmedAamro/BOOK-SKP-Claude-", image: "/NEXT.JS/physical AI & Humanoid Robotics.png" },
+  { title: "Islamic Worship Assistant (Ramadan App)", description: "Worship assistant with prayer times, Quran features and Ramadan-focused tools delivered through a responsive web interface.", tech: ["Next.js", "TypeScript", "Islamic APIs", "Tailwind CSS"], category: "Web Application", liveUrl: "https://v0-ramzan-app-features.vercel.app/", image: "/NEXT.JS/Islamic Worship Assistant.png" },
+  { title: "E-Commerce Book Store", description: "E-commerce bookstore with product catalog, cart, authentication, checkout and order-management workflows.", tech: ["Next.js", "TypeScript", "Sanity CMS", "Tailwind CSS"], category: "E-Commerce", liveUrl: "https://final-hackthoon-2-ska-git-main-suhailahmedaamros-projects.vercel.app/", githubUrl: "https://github.com/SuhailAhmedAamro/E-Comm", image: "/NEXT.JS/E-Commerce website.png" },
+  { title: "NJV School Management System", description: "School management workflow covering student registration, attendance, grades and communication features in a single web application.", tech: ["Next.js", "TypeScript", "Database", "Tailwind CSS"], category: "Management System", liveUrl: "https://njv-school.vercel.app/", image: "/NEXT.JS/NJV Form.png" },
+  { title: "GDP Dashboard", description: "Interactive economic-data dashboard using country comparisons, historical trends and Plotly visualizations for exploratory analysis.", tech: ["Python", "Streamlit", "Pandas", "Plotly"], category: "Python Application", liveUrl: "https://gdp-dashboard-uskmsgizln.streamlit.app/", image: "/PY/GDP.png" },
+  { title: "Multi-Project Python App", description: "A collection of 15 interactive Python projects covering calculators, productivity tools and utility applications in one Streamlit experience.", tech: ["Python", "Streamlit", "Plotly", "Pandas"], category: "Python Application", liveUrl: "https://suhailahmedaamro-python-projects-projects-60ybw3.streamlit.app/", image: "/PY/Multiple Projects.png" },
+  { title: "Personal Library Manager", description: "Streamlit library manager for cataloging books, tracking reading status and visualizing collection statistics with Pandas and Plotly.", tech: ["Python", "Streamlit", "Pandas", "Plotly"], category: "Python Application", liveUrl: "https://suhailahmedaamro-library-manager-py-library-manager-txxaiw.streamlit.app/", image: "/PY/Personal Library Manger.png" },
 ];
 
 export default function Projects() {
@@ -40,7 +49,8 @@ export default function Projects() {
                 <div className="flex flex-wrap gap-2 mb-5">{project.tech.map((tech) => <span key={tech} className="text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-700">{tech}</span>)}</div>
                 <div className="flex flex-wrap gap-3">
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2 text-sm"><ExternalLink size={16}/> Live Demo</a>
-                  {project.slug ? <Link href={`/projects/${project.slug}`} className="btn-secondary inline-flex items-center gap-2 text-sm">Case Study <ArrowRight size={16}/></Link> : <a href="https://github.com/SuhailAhmedAamro" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2 text-sm"><Github size={16}/> Code</a>}
+                  {project.slug && <Link href={`/projects/${project.slug}`} className="btn-secondary inline-flex items-center gap-2 text-sm">Case Study <ArrowRight size={16}/></Link>}
+                  {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2 text-sm"><Github size={16}/> Code</a>}
                 </div>
               </div>
             </article>
