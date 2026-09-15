@@ -3,6 +3,7 @@
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import GitHubProjects from "@/components/GitHubProjects";
 
 const projects = [
   { title: "University AI Assistant", slug: "university-ai-assistant", description: "Intelligent university assistant built with Next.js and AI integration for student queries and academic guidance.", tech: ["Next.js", "TypeScript", "AI/ML", "Tailwind CSS"], category: "AI Web Application", liveUrl: "https://aamro-university-agent.vercel.app/", image: "/NEXT.JS/University Assistant.png" },
@@ -46,6 +47,7 @@ export default function Projects() {
           ))}
         </div>
       </section>
+      <GitHubProjects />
     </div>
   );
 }
