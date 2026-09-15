@@ -65,11 +65,17 @@ export async function POST(request: Request) {
       parts: [{ text: message.content.slice(0, 4000) }],
     }));
 
+    // Use a current Flash model. Gemini 2.5 Flash generation can return 404
+    // for some newer authorization keys/projects, while current Flash models
+    // are recommended for new applications.
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`,
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent",
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "x-goog-api-key": apiKey,
+        },
         body: JSON.stringify({
           systemInstruction: { parts: [{ text: PORTFOLIO_CONTEXT }] },
           contents,
