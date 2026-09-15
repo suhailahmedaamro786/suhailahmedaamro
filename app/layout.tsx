@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import AIPortfolioAssistant from "@/components/AIPortfolioAssistant";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +38,7 @@ export default function RootLayout({
             <main id="main-content" className="flex-grow">{children}</main>
             <Footer />
             <WhatsAppFloat />
+            <AIPortfolioAssistant />
           </div>
         </ThemeProvider>
       </body>
