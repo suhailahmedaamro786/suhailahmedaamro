@@ -10,7 +10,7 @@ import AIPortfolioAssistant from "@/components/AIPortfolioAssistant";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://my-portfilo-41201.vercel.app"),
+  metadataBase: new URL("https://suhailahmedaamro.vercel.app"),
   title: {
     default: "Suhail Ahmed | AI & Web Developer",
     template: "%s | Suhail Ahmed",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Suhail Ahmed | AI & Web Developer",
     description: "Explore AI applications, web projects, Python tools and software work by Suhail Ahmed.",
     type: "website",
-    url: "https://my-portfilo-41201.vercel.app",
+    url: "https://suhailahmedaamro.vercel.app",
     siteName: "Suhail Ahmed Portfolio",
   },
   twitter: {
