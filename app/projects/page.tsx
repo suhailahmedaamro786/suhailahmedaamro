@@ -28,7 +28,7 @@ const projects = [
 ];
 
 export default function Projects() {
-  const categories = ["All", "AI Web Application", "Professional Portfolio", "AI / Documentation", "E-Commerce", "Management System", "Python Application"];
+  const categories = ["All", "School ERP / SaaS", "AI Web Application", "Professional Portfolio", "AI / Documentation", "E-Commerce", "Management System", "Python Application"];
   return (
     <div className="min-h-screen">
       <section className="section-padding bg-gradient-to-br from-primary-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
