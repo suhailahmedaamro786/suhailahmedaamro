@@ -13,6 +13,23 @@ const caseStudies: Record<string, {
   liveUrl: string;
   githubUrl?: string;
 }> = {
+  "npsd-school-erp": {
+    title: "NPSD School ERP",
+    category: "School ERP / SaaS",
+    summary: "A production-focused custom School ERP with separate Student, Teacher and Admin portals. It digitizes admissions, student records, attendance, examinations, results, announcements and student identity workflows.",
+    challenge: "The school needed more than a public website: admissions required registration and approval, students needed secure portal access, teachers needed operational tools, and administrators needed centralized control of school data.",
+    solution: "Built a modular school platform around Next.js, TypeScript and Supabase. The admission flow captures structured student information and photo, creates a controlled portal identity, assigns a unique student ID through approval, and connects approved students to a secure dashboard. The system also covers teacher operations, attendance, results, announcements, digital ID cards and QR-based identity workflows.",
+    tech: ["Next.js", "TypeScript", "Supabase Auth", "PostgreSQL", "Row Level Security", "Supabase Storage", "QR Code", "Vercel"],
+    features: ["Student registration and photo upload", "Admin approval/rejection workflow", "CNIC-based student login", "Student dashboard and profile", "Teacher portal and class operations", "Admin dashboard and school analytics", "Attendance management", "Exams and results", "Announcements and notifications", "Two-sided digital student ID card with QR", "CSV/report export foundations", "Responsive desktop/tablet/mobile UI"],
+    modules: ["Admissions & approval", "Students & classes", "Teachers & assignments", "Attendance", "Exams & results", "Announcements & notifications", "Digital cards & QR", "Fees & finance", "Timetable & homework", "Library", "Transport", "Student documents & promotions", "Transfer certificates", "Audit/reporting foundations"],
+    architecture: ["Three focused portals: Student, Teacher and Admin", "Next.js App Router + TypeScript", "Supabase Auth for authentication", "PostgreSQL relational school data model", "Row Level Security for protected data access", "Supabase Storage for photos/documents", "Server-side API routes for privileged operations", "Modular-monolith architecture for practical deployment"],
+    security: ["Server-side authorization for privileged operations", "RLS policies for protected school data", "CNIC normalized and validated as 13 digits", "Mobile numbers validated as 11 digits", "Admission photo type and size validation", "Service-role credentials kept server-side", "Controlled student identity linking during approval", "Final architecture has no Parent Portal"],
+    liveUrl: "https://student-portal-chi-navy.vercel.app/",
+    githubUrl: "https://github.com/suhailahmedaamro786/Student-Portal-",
+    portals: [{ label: "Student Portal", url: "https://student-portal-chi-navy.vercel.app/" }, { label: "Teacher Portal", url: "https://npsd-teacher.vercel.app/" }, { label: "Admin Dashboard", url: "https://npsd-admin-dashboard.vercel.app/" }],
+    repositories: [{ label: "Student Portal", url: "https://github.com/suhailahmedaamro786/Student-Portal-" }, { label: "Teacher Portal", url: "https://github.com/suhailahmedaamro786/NPSD-Teacher" }, { label: "Admin Dashboard", url: "https://github.com/suhailahmedaamro786/NPSD-admin-dashboard-" }],
+  },
+
   "university-ai-assistant": {
     title: "University AI Assistant",
     category: "AI Web Application",
@@ -82,6 +99,14 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
       </section>
       <section className="section-padding"><div className="container-custom max-w-5xl grid md:grid-cols-2 gap-8"><article className="p-7 rounded-2xl border dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm"><h2 className="text-2xl font-bold mb-4">The Challenge</h2><p className="text-gray-600 dark:text-gray-300 leading-7">{project.challenge}</p></article><article className="p-7 rounded-2xl border dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm"><h2 className="text-2xl font-bold mb-4">The Solution</h2><p className="text-gray-600 dark:text-gray-300 leading-7">{project.solution}</p></article></div></section>
       <section className="section-padding bg-gray-50 dark:bg-gray-800/50"><div className="container-custom max-w-5xl grid md:grid-cols-2 gap-12"><div><h2 className="text-3xl font-bold mb-6">Technology Stack</h2><div className="flex flex-wrap gap-3">{project.tech.map((item) => <span key={item} className="px-4 py-2 rounded-full bg-white dark:bg-gray-700 shadow-sm font-medium">{item}</span>)}</div></div><div><h2 className="text-3xl font-bold mb-6">Key Features</h2><ul className="space-y-3">{project.features.map((item) => <li key={item} className="flex gap-3 text-gray-700 dark:text-gray-300"><CheckCircle2 className="text-primary-600 shrink-0" size={20} />{item}</li>)}</ul></div></div></section>
+      {project.modules && <section className="section-padding bg-gray-50 dark:bg-gray-800/50"><div className="container-custom max-w-5xl"><h2 className="text-3xl font-bold mb-6">ERP Modules</h2><div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">{project.modules.map((item) => <div key={item} className="p-4 rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-800 font-medium">{item}</div>)}</div></div></section>}
+
+      {project.architecture && <section className="section-padding"><div className="container-custom max-w-5xl"><h2 className="text-3xl font-bold mb-6">Architecture</h2><div className="grid md:grid-cols-2 gap-4">{project.architecture.map((item) => <div key={item} className="flex gap-3 p-4 rounded-xl bg-gray-50 dark:bg-gray-800/60"><CheckCircle2 className="text-primary-600 shrink-0" size={20}/><span>{item}</span></div>)}</div></div></section>}
+
+      {project.security && <section className="section-padding bg-gray-50 dark:bg-gray-800/50"><div className="container-custom max-w-5xl"><h2 className="text-3xl font-bold mb-6">Security & Validation</h2><div className="grid md:grid-cols-2 gap-4">{project.security.map((item) => <div key={item} className="flex gap-3 p-4 rounded-xl bg-white dark:bg-gray-800 border dark:border-gray-700"><CheckCircle2 className="text-primary-600 shrink-0" size={20}/><span>{item}</span></div>)}</div></div></section>}
+
+      {project.repositories && <section className="section-padding"><div className="container-custom max-w-5xl"><h2 className="text-3xl font-bold mb-6">Source Repositories</h2><div className="grid md:grid-cols-3 gap-5">{project.repositories.map((item) => <a key={item.label} href={item.url} target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center justify-center gap-2 p-5"><Github size={20}/>{item.label}</a>)}</div></div></section>}
+
       <section className="section-padding"><div className="container-custom max-w-3xl text-center"><h2 className="text-3xl font-bold mb-4">Want something similar?</h2><p className="text-gray-600 dark:text-gray-300 mb-7">Tell me about your idea, goals and timeline. I can help turn it into a production-ready web experience.</p><Link href="/contact" className="btn-primary">Start a Project</Link></div></section>
     </div>
   );
