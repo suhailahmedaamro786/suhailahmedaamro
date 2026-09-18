@@ -12,6 +12,11 @@ const caseStudies: Record<string, {
   features: string[];
   liveUrl: string;
   githubUrl?: string;
+  modules?: string[];
+  architecture?: string[];
+  security?: string[];
+  portals?: { label: string; url: string }[];
+  repositories?: { label: string; url: string }[];
 }> = {
   "npsd-school-erp": {
     title: "NPSD School ERP",
