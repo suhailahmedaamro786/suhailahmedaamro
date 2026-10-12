@@ -19,7 +19,7 @@ const projects = [
     tech: ["Next.js", "React", "TypeScript", "Vercel"],
     category: "Education Platform",
     liveUrl: "https://education-hub-dusky.vercel.app/",
-    image: "/NEXT.JS/University Assistant.png",
+    image: null,
   },
   {
     title: "D-Pizza — Online Restaurant Website",
@@ -28,7 +28,7 @@ const projects = [
     category: "Restaurant / E-Commerce",
     liveUrl: "https://d-pizza.vercel.app/",
     githubUrl: "https://github.com/suhailahmedaamro786/dinesmooth-vibes",
-    image: "/NEXT.JS/E-Commerce website.png",
+    image: null,
   },
   {
     title: "AI StudyMate",
@@ -45,7 +45,7 @@ const projects = [
     category: "AI Application",
     liveUrl: "https://personal-ai-assistance-pearl.vercel.app/",
     githubUrl: "https://github.com/suhailahmedaamro786/PERSONAL-AI-ASSISTANCE-",
-    image: "/NEXT.JS/portfilo.png",
+    image: null,
   },
   {
     title: "NPSD School ERP",
@@ -139,9 +139,15 @@ export default function Projects() {
         <div className="container-custom grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <article key={project.title} className="group overflow-hidden rounded-2xl border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800" style={{ animation: `fadeInUp .5s ease-out ${index * .04}s both` }}>
-              <div className="relative h-52 w-full overflow-hidden bg-gray-100 dark:bg-gray-700">
-                <Image src={project.image} alt={`${project.title} project preview`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
-              </div>
+              {project.image ? (
+                <div className="relative h-52 w-full overflow-hidden bg-gray-100 dark:bg-gray-700">
+                  <Image src={project.image} alt={`${project.title} project preview`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+              ) : (
+                <div className="flex h-52 w-full items-center justify-center border-b border-dashed border-gray-300 bg-gray-50 text-sm text-gray-500 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-400">
+                  Real project screenshot coming soon
+                </div>
+              )}
               <div className="p-6">
                 <span className="text-xs font-semibold text-primary-600 dark:text-primary-400">{project.category}</span>
                 <h2 className="mb-3 mt-2 text-xl font-bold">{project.title}</h2>
