@@ -36,7 +36,7 @@ const projects = [
     tech: ["React", "Supabase", "AI", "Railway"],
     category: "AI Education",
     liveUrl: "https://ai-studymate-dkel.vercel.app/",
-    image: "/NEXT.JS/University Assistant.png",
+    image: null,
   },
   {
     title: "Personal AI Assistant",
