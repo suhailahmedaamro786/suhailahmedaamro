@@ -5,16 +5,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
-import AIPortfolioAssistant from "@/components/AIPortfolioAssistant";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://suhailahmedaamro.vercel.app"),
-  title: {
-    default: "Suhail Ahmed | AI & Web Developer",
-    template: "%s | Suhail Ahmed",
-  },
+  title: { default: "Suhail Ahmed | AI & Web Developer", template: "%s | Suhail Ahmed" },
   description: "Suhail Ahmed's portfolio featuring AI applications, Next.js web development, Python projects, dashboards and automation work.",
   keywords: ["Suhail Ahmed", "AI Developer", "Web Developer", "Next.js", "TypeScript", "Python", "Portfolio"],
   authors: [{ name: "Suhail Ahmed" }],
@@ -26,11 +22,7 @@ export const metadata: Metadata = {
     url: "https://suhailahmedaamro.vercel.app",
     siteName: "Suhail Ahmed Portfolio",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Suhail Ahmed | AI & Web Developer",
-    description: "AI, web development, Python and software projects by Suhail Ahmed.",
-  },
+  twitter: { card: "summary_large_image", title: "Suhail Ahmed | AI & Web Developer", description: "AI, web development, Python and software projects by Suhail Ahmed." },
   robots: { index: true, follow: true },
 };
 
@@ -40,12 +32,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg">Skip to content</a>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex min-h-screen flex-col">
             <Navbar />
             <main id="main-content" className="flex-grow">{children}</main>
             <Footer />
             <WhatsAppFloat />
-            <AIPortfolioAssistant />
           </div>
         </ThemeProvider>
       </body>
